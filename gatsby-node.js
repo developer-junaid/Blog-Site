@@ -6,7 +6,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   // Get Data
   const data = await graphql(`
-    query MyQuery {
+    query GetData {
       allContentfulBlog {
         edges {
           node {
@@ -27,12 +27,26 @@ exports.createPages = async ({ actions, graphql }) => {
           }
         }
       }
+
+      allContentfulCategory {
+        edges {
+          node {
+            blogIds {
+              ids
+            }
+            id
+            name
+          }
+        }
+      }
     }
   `);
 
-  // Store data
+  // // Store data
   const blogPosts = data.data.allContentfulBlog.edges;
-  // Create Page
+  const categories = data.data.allContentfulCategory.edges;
+
+  // // Create Page
   blogPosts.map((blogPost) => {
     createPage({
       path: `/blogs/${blogPost.node.id}`,
