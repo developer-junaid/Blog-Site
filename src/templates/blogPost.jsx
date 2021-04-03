@@ -3,11 +3,22 @@ import React from "react";
 // Blog Template
 export default function BlogPost({ pageContext }) {
   // Data recieved
-  pageContext.postDetails && console.log(pageContext.postDetails);
+  const post = pageContext.postDetails.node;
+  console.log(post);
+  const {
+    id,
+    catId,
+    title,
+    author,
+    likes,
+    createdAt,
+    blogImage,
+    content,
+  } = post;
 
   return (
     <div>
-      <h1>Blog Post</h1>
+      <h1>{title}</h1>
     </div>
   );
 }
