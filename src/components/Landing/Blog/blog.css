@@ -1,0 +1,51 @@
+.blog-card {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.card-img {
+  height: 60%;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-content {
+  height: 40%;
+  padding: 1rem;
+  position: relative;
+  background: #aeadad52;
+}
+
+.card-content .card-title {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.card-content .card-date {
+  text-transform: uppercase;
+  color: #5b5858;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.3rem;
+}
+
+.card-content .card-tag {
+  background-color: #00802b;
+  color: white;
+  width: 90px;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0.3rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: smaller;
+}
+
+/* FROM THE BLOG - END */

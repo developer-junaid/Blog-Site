@@ -13,7 +13,7 @@ exports.createPages = async ({ actions, graphql }) => {
             id
             catId
             title
-            createdAt
+            createdAt(fromNow: true)
             author
             likes
             content {
