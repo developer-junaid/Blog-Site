@@ -7,7 +7,7 @@ import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 // Navbar Containing Links to pages
 export default function Footer() {
   return (
-    <div className="footer">
+    <footer className="footer">
       <hr />
       <div className="icons-container">
         <a href="#">
@@ -23,6 +23,6 @@ export default function Footer() {
       <p>
         Developed by: <span>Junaid Qureshi</span>
       </p>
-    </div>
+    </footer>
   );
 }

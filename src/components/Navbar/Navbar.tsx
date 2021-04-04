@@ -6,7 +6,7 @@ import MenuIcon from "./menu.svg";
 // Navbar Containing Links to pages
 export default function Navbar() {
   return (
-    <div className="navbar">
+    <header className="navbar">
       <Link to="/" className="logo">
         <span>Tech</span>Berg
       </Link>
@@ -17,6 +17,6 @@ export default function Navbar() {
       <Link to="/about">About</Link>
       <Link to="/contact">Contact</Link>
       <Link to="/products">Products</Link> */}
-    </div>
+    </header>
   );
 }
