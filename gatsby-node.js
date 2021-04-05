@@ -11,7 +11,8 @@ exports.createPages = async ({ actions, graphql }) => {
         edges {
           node {
             id
-            catId
+            category
+            slug
             title
             createdAt(fromNow: true)
             author
@@ -31,9 +32,6 @@ exports.createPages = async ({ actions, graphql }) => {
       allContentfulCategory {
         edges {
           node {
-            blogIds {
-              ids
-            }
             id
             name
           }
@@ -46,13 +44,25 @@ exports.createPages = async ({ actions, graphql }) => {
   const blogPosts = data.data.allContentfulBlog.edges;
   const categories = data.data.allContentfulCategory.edges;
 
-  // // Create Page
+  // // Create BlogDetails Page
   blogPosts.map((blogPost) => {
     createPage({
-      path: `/blogs/${blogPost.node.id}`,
+      path: `/blogs/${blogPost.node.slug}`,
       component: path.resolve("./src/templates/BlogTemplate.tsx"),
       context: {
         postDetails: blogPost,
+      },
+    });
+  });
+
+  // // Create CategoryDetails Page
+  categories.map((category) => {
+    createPage({
+      path: `/categories/${category.node.name}`,
+      component: path.resolve("./src/templates/CategoryTemplate.tsx"),
+      context: {
+        categoryDetails: category,
+        postDetails: blogPosts,
       },
     });
   });

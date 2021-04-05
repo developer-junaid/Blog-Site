@@ -20,8 +20,9 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          catId
+          category
           title
+          slug
           createdAt(fromNow: true)
           author
           likes

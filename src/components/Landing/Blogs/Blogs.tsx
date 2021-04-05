@@ -6,8 +6,9 @@ import Heading from "../../Heading/Heading";
 interface blogType {
   node: {
     id: string;
-    catId: string;
+    category: string;
     likes: number;
+    slug: string;
     title: string;
     createdAt: string;
     author: string;
@@ -21,34 +22,41 @@ interface blogsPropsType {
 }
 
 const Blogs: React.FC<blogsPropsType> = ({ blogs }) => {
+  let counter = 0;
+
   return (
     <section className="blogs-section">
       <Heading title="From The Blog" />
       {blogs &&
         blogs.map((blog) => {
-          // Extract Data
+          // Extract Datas
           const {
             id,
-            catId,
+            category,
             likes,
             title,
+            slug,
             createdAt,
             author,
             blogImage,
             content,
           } = blog.node;
 
-          // Return
-          return (
-            <Blog
-              key={id}
-              id={id}
-              title={title}
-              imageSrc={blogImage.fluid.src}
-              createdAt={createdAt}
-              catId={catId}
-            />
-          );
+          counter++;
+          if (counter <= 3) {
+            // Return
+            return (
+              <Blog
+                key={id}
+                id={id}
+                title={title}
+                imageSrc={blogImage.fluid.src}
+                createdAt={createdAt}
+                category={category}
+                slug={slug}
+              />
+            );
+          }
         })}
     </section>
   );

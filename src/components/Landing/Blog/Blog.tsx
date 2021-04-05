@@ -4,8 +4,9 @@ import { Router } from "@reach/router";
 import { Link } from "gatsby";
 
 interface blogPropsType {
-  id: string;
-  catId: string;
+  id?: string;
+  category: string;
+  slug: string;
   title: string;
   createdAt: string;
   imageSrc: string;
@@ -13,23 +14,22 @@ interface blogPropsType {
 
 const Blog: React.FC<blogPropsType> = ({
   id,
-  catId,
+  category,
   title,
   createdAt,
+  slug,
   imageSrc,
 }) => {
-  console.log(id, catId, title, createdAt, imageSrc);
-
   return (
     //Blog Section
-    <Link to={`/blogs/${id}`} className="blog-card">
+    <Link to={`/blogs/${slug}`} className="blog-card">
       <div className="card-img">
         <img src={imageSrc} alt="" />
       </div>
       <div className="card-content">
         <p className="card-title">{title}</p>
         <p className="card-date">{createdAt}</p>
-        <p className="card-tag">trends</p>
+        <p className="card-tag">{category}</p>
       </div>
     </Link>
   );

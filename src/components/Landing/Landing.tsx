@@ -8,7 +8,8 @@ import "./landing.css";
 interface blogType {
   node: {
     id: string;
-    catId: string;
+    category: string;
+    slug: string;
     likes: number;
     title: string;
     createdAt: string;

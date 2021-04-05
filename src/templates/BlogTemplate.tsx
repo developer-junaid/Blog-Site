@@ -5,10 +5,10 @@ import BlogDetails from "../components/BlogDetails/BlogDetails";
 export default function BlogTemplate({ pageContext }) {
   // Data recieved
   const post = pageContext.postDetails.node;
-  console.log(post);
+  console.log("blog", post);
   const {
-    id,
-    catId,
+    category,
+    slug,
     title,
     author,
     likes,
@@ -19,6 +19,8 @@ export default function BlogTemplate({ pageContext }) {
 
   return (
     <BlogDetails
+      slug={slug}
+      category={category}
       title={title}
       content={content.raw}
       imageSrc={blogImage.fluid.src}

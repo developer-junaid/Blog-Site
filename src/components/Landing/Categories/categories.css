@@ -39,18 +39,29 @@
   background-position: center;
 }
 
-.category-card button {
+.category-card .button {
   width: 7rem;
-  height: 2.9rem;
+  text-decoration: none;
+  height: 2.7rem;
   outline: none;
   font-size: 0.8rem;
   border: none;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border-radius: 0px;
   background: #196712;
   font-weight: bold;
   text-transform: uppercase;
   color: white;
+  transition: all 0.5s ease;
+}
+
+.category-card .button:hover {
+  background-color: white;
+  color: #196712;
 }
 
 /* CATEGORIES - END */

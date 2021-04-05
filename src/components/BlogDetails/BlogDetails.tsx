@@ -14,6 +14,8 @@ interface blogDetailsPropsType {
   content: string;
   likes: number;
   author: string;
+  slug: string;
+  category: string;
 }
 
 const BlogDetails: React.FC<blogDetailsPropsType> = ({
@@ -23,6 +25,8 @@ const BlogDetails: React.FC<blogDetailsPropsType> = ({
   content,
   likes,
   author,
+  slug,
+  category,
 }) => {
   const contentJSON = JSON.parse(content);
   console.log(contentJSON);

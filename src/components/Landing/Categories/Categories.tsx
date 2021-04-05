@@ -1,6 +1,7 @@
 import React from "react";
 import "./categories.css";
 import Heading from "./../../Heading/Heading";
+import { Link } from "gatsby";
 
 const Categories = () => {
   return (
@@ -9,13 +10,19 @@ const Categories = () => {
       <Heading title={"Categories"} />
 
       <div className="category-card" id="gadgets-category-card">
-        <button>Gadgets</button>
+        <Link className="button" to="/categories/gadgets">
+          Gadgets
+        </Link>
       </div>
       <div className="category-card" id="marketing-category-card">
-        <button>Marketing</button>
+        <Link className="button" to="/categories/marketing">
+          Marketing
+        </Link>
       </div>
       <div className="category-card" id="trends-category-card">
-        <button>Trends</button>
+        <Link className="button" to="/categories/trends">
+          Trends
+        </Link>
       </div>
     </section>
   );
