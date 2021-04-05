@@ -50,7 +50,7 @@ exports.createPages = async ({ actions, graphql }) => {
   blogPosts.map((blogPost) => {
     createPage({
       path: `/blogs/${blogPost.node.id}`,
-      component: path.resolve("./src/templates/blogPost.jsx"),
+      component: path.resolve("./src/templates/BlogTemplate.tsx"),
       context: {
         postDetails: blogPost,
       },

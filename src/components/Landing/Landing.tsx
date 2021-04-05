@@ -6,7 +6,16 @@ import Hero from "./Hero/Hero";
 import "./landing.css";
 
 interface blogType {
-  node: {};
+  node: {
+    id: string;
+    catId: string;
+    likes: number;
+    title: string;
+    createdAt: string;
+    author: string;
+    blogImage: { fluid: { src: string } };
+    content: {};
+  };
 }
 
 interface landingPropsType {

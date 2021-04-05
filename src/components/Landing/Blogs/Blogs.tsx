@@ -1,6 +1,7 @@
 import React from "react";
 import Blog from "./../Blog/Blog";
 import "./blogs.css";
+import Heading from "../../Heading/Heading";
 
 interface blogType {
   node: {
@@ -20,31 +21,9 @@ interface blogsPropsType {
 }
 
 const Blogs: React.FC<blogsPropsType> = ({ blogs }) => {
-  // console.log("blogs", blogs);
-
-  // blogs &&
-  //   blogs.map((blog) => {
-  //     console.log(blog.node);
-  //     const {
-  //       id,
-  //       catId,
-  //       likes,
-  //       title,
-  //       createdAt,
-  //       author,
-  //       blogImage,
-  //       content,
-  //     } = blog;
-
-  //     return <Blog />;
-  //   });
-
   return (
     <section className="blogs-section">
-      <div className="heading">
-        <h3>From The Blog</h3>
-        <div className="underline"></div>
-      </div>
+      <Heading title="From The Blog" />
       {blogs &&
         blogs.map((blog) => {
           // Extract Data
@@ -63,6 +42,7 @@ const Blogs: React.FC<blogsPropsType> = ({ blogs }) => {
           return (
             <Blog
               key={id}
+              id={id}
               title={title}
               imageSrc={blogImage.fluid.src}
               createdAt={createdAt}

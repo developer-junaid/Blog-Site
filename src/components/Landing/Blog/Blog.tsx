@@ -1,7 +1,10 @@
 import React from "react";
 import "./blog.css";
+import { Router } from "@reach/router";
+import { Link } from "gatsby";
 
 interface blogPropsType {
+  id: string;
   catId: string;
   title: string;
   createdAt: string;
@@ -9,16 +12,17 @@ interface blogPropsType {
 }
 
 const Blog: React.FC<blogPropsType> = ({
+  id,
   catId,
   title,
   createdAt,
   imageSrc,
 }) => {
-  console.log(catId, title, createdAt, imageSrc);
+  console.log(id, catId, title, createdAt, imageSrc);
 
   return (
     //Blog Section
-    <div className="blog-card">
+    <Link to={`/blogs/${id}`} className="blog-card">
       <div className="card-img">
         <img src={imageSrc} alt="" />
       </div>
@@ -27,7 +31,7 @@ const Blog: React.FC<blogPropsType> = ({
         <p className="card-date">{createdAt}</p>
         <p className="card-tag">trends</p>
       </div>
-    </div>
+    </Link>
   );
 };
 

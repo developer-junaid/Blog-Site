@@ -1,14 +1,12 @@
 import React from "react";
 import "./categories.css";
+import Heading from "./../../Heading/Heading";
 
 const Categories = () => {
   return (
     // Categories Section
     <section className="categories-section">
-      <div className="heading">
-        <h3>Categories</h3>
-        <div className="underline"></div>
-      </div>
+      <Heading title={"Categories"} />
 
       <div className="category-card" id="gadgets-category-card">
         <button>Gadgets</button>

@@ -1,0 +1,19 @@
+.blog-details-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-img {
+  height: 60%;
+}
+
+.main-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  padding: 1rem;
+  line-height: 1.3rem;
+  letter-spacing: 0.6px;
+}

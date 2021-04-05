@@ -1,0 +1,77 @@
+.author-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding: 1rem 0.2rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.author-section > p {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.author-section .author-image-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.author-image-section .left-line {
+  width: 62px;
+  height: 1px;
+  border: 0.5px solid #000000a1;
+}
+
+.author-image-section .author-img {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  margin: 1rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.author-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.author-image-section .right-line {
+  width: 62px;
+  border: 0.5px solid #000000a1;
+  height: 1px;
+}
+
+.author-description > p {
+  font-size: 1rem;
+  letter-spacing: 0.6px;
+  line-height: 1.3rem;
+}
+
+.icons {
+  width: 100%;
+  height: 70px;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.likes {
+  color: red;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin: 0 0.3rem;
+}
+
+.count {
+  font-size: 0.9rem;
+}
+
+.social-media {
+}
