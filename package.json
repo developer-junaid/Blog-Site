@@ -16,6 +16,8 @@
   },
   "license": "0BSD",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^14.1.1",
+    "@contentful/rich-text-types": "^14.1.2",
     "@react-icons/all-files": "^4.1.0",
     "dotenv": "^8.2.0",
     "gatsby": "^3.2.1",
