@@ -1,4 +1,6 @@
-.navbar {
+/* Mobile Version */
+
+/* .navbar {
   width: 100%;
   height: 8vh;
   display: flex;
@@ -28,4 +30,154 @@
   border: none;
   cursor: pointer;
   background: transparent;
+} */
+
+.navbar {
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
 }
+
+.navbar .logo {
+  text-decoration: none;
+  color: black;
+  font-size: 1.4rem;
+}
+
+.navbar span {
+  color: #00802b;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  position: absolute;
+  right: 0px;
+  top: 8vh;
+  height: 50vh;
+  background: #00802bf1;
+  transform: translate(100%);
+  transition: all 0.4s ease-in;
+  opacity: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.nav-links li {
+  list-style: none;
+  opacity: 1;
+}
+
+.navbar .menu-icon {
+  width: 2rem;
+  height: 2rem;
+  pointer-events: none;
+}
+
+.menu-btn {
+  /* display: none;  IN PC VERSION*/
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+}
+
+.nav-active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 999;
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* PC Version */
+/* .menu-btn {
+  display: none;
+} */
+
+/* nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #5d4954;
+  }
+  
+  .logo {
+    color: whitesmoke;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1rem;
+  }
+  
+  .nav-links li {
+    list-style: none;
+  } */
+
+/* My Previous Styles */
+
+/* .navbar {
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+.navbar .logo {
+  text-decoration: none;
+  color: black;
+  font-size: 1.4rem;
+}
+
+.navbar span {
+  color: #00802b;
+  font-weight: bold;
+}
+
+.navbar .menu-icon {
+  width: 2rem;
+  height: 2rem;
+  pointer-events: none;
+}
+
+.menu-btn {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+} */
