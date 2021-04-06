@@ -10,6 +10,9 @@ export default function Footer() {
     <div className="footer-wrapper">
       <footer className="footer">
         <hr />
+        <p>
+          Developed by: <span>Junaid Qureshi</span>
+        </p>
         <div className="icons-container">
           <a href="https://www.facebook.com/JunaidQureshi6/">
             <FaFacebook />
@@ -21,9 +24,6 @@ export default function Footer() {
             <FaGithub />
           </a>
         </div>
-        <p>
-          Developed by: <span>Junaid Qureshi</span>
-        </p>
       </footer>
     </div>
   );
