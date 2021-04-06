@@ -1,0 +1,70 @@
+.hero-blog-card {
+  display: none;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.hero-card-img {
+  height: 60%;
+  background-image: url("./../../../assets/images/hero/hero-blog-image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-card-content {
+  height: 40%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-around;
+}
+
+.hero-card-content .hero-card-tag {
+  color: #00802b;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.hero-card-content .hero-card-title {
+  font-size: 1.2rem;
+  font-weight: 550;
+}
+
+.hero-card-content .hero-card-date {
+  text-transform: uppercase;
+  color: #5b5858d2;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.hero-card-content .hero-card-text {
+  line-height: 1.3rem;
+  letter-spacing: 0.4px;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.781);
+}
+
+.hero-card-content a {
+  color: black;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+/**372A47 **/
+
+/* FROM THE BLOG - END */
+
+/* Tablet/Laptop Version 550*/
+@media only screen and (min-width: 550px) {
+  .hero-blog-card {
+    display: flex;
+  }
+}

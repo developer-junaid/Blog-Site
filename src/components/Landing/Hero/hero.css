@@ -60,3 +60,9 @@
   background-position: center;
 }
 /* HERO - END*/
+/* Tablet/Laptop Version 550*/
+@media only screen and (min-width: 550px) {
+  .hero-section {
+    display: none;
+  }
+}

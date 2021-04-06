@@ -4,6 +4,7 @@ import Categories from "./Categories/Categories";
 import Newsletter from "./Newsletter/Newsletter";
 import Hero from "./Hero/Hero";
 import "./landing.css";
+import HeroBlog from "./HeroBlog/HeroBlog";
 
 interface blogType {
   node: {
@@ -27,6 +28,7 @@ const Landing: React.FC<landingPropsType> = ({ blogs }) => {
   return (
     <div className="homepage-container">
       <Hero />
+      <HeroBlog />
       <Categories />
       <Blogs blogs={blogs} />
       <Newsletter />

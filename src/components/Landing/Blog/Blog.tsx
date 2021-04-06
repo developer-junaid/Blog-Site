@@ -1,6 +1,5 @@
 import React from "react";
 import "./blog.css";
-import { Router } from "@reach/router";
 import { Link } from "gatsby";
 
 interface blogPropsType {
