@@ -3,6 +3,8 @@ import { Link } from "gatsby";
 import "./navbar.css";
 import { ImCross } from "@react-icons/all-files/im/ImCross";
 import { BiMenuAltRight } from "@react-icons/all-files/bi/BiMenuAltRight";
+import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
 
 // Navbar Containing Links to pages
 export default function Navbar() {
@@ -16,18 +18,34 @@ export default function Navbar() {
       </Link>
       <ul className={navClicked ? "nav-links nav-active" : "nav-links"}>
         <li>
-          <Link to="/">Home</Link>
+          <Link activeStyle={{ color: "#00802b" }} to="/">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/categories/gadgets">Gadgets</Link>
+          <Link activeStyle={{ color: "#00802b" }} to="/categories/gadgets">
+            Gadgets
+          </Link>
         </li>
         <li>
-          <Link to="/categories/marketing">Marketing</Link>
+          <Link activeStyle={{ color: "#00802b" }} to="/categories/marketing">
+            Marketing
+          </Link>
         </li>
         <li>
-          <Link to="/categories/trends">Trends</Link>
+          <Link activeStyle={{ color: "#00802b" }} to="/categories/trends">
+            Trends
+          </Link>
         </li>
       </ul>
+      <div className="icons-container">
+        <a href="https://www.facebook.com/JunaidQureshi6/">
+          <FaFacebook />
+        </a>
+        <a href="https://www.linkedin.com/in/developer-junaid/">
+          <FaLinkedin />
+        </a>
+      </div>
       <button className="menu-btn" onClick={() => setNavClicked(!navClicked)}>
         {navClicked ? (
           <ImCross
