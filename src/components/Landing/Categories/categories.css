@@ -65,3 +65,9 @@
 }
 
 /* CATEGORIES - END */
+/* Tablet/Laptop Version 550*/
+@media only screen and (min-width: 550px) {
+  .categories-section {
+    display: none;
+  }
+}

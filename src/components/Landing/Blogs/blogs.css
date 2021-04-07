@@ -1,9 +1,16 @@
 /* FROM THE BLOG */
 .blogs-section {
+  display: block;
   width: 100%;
   height: auto;
 }
 .blogs-section .heading {
   margin-top: 4rem;
   margin-bottom: 4.5rem;
+}
+
+@media only screen and (min-width: 550px) {
+  .blogs-section {
+    display: none;
+  }
 }

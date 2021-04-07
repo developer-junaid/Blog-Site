@@ -1,8 +1,7 @@
 .hero-blog-card {
   display: none;
   width: 100%;
-  height: 600px;
-  display: flex;
+  height: 700px;
   flex-direction: column;
   margin-top: 2rem;
   cursor: pointer;
@@ -34,28 +33,29 @@
 }
 
 .hero-card-content .hero-card-title {
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   font-weight: 550;
 }
 
 .hero-card-content .hero-card-date {
   text-transform: uppercase;
   color: #5b5858d2;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: bold;
 }
 
 .hero-card-content .hero-card-text {
   line-height: 1.3rem;
   letter-spacing: 0.4px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: rgba(0, 0, 0, 0.781);
 }
 
 .hero-card-content a {
   color: black;
   text-decoration: underline;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  font-weight: 450;
 }
 
 /**372A47 **/

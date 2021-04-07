@@ -1,0 +1,16 @@
+.landing-category-section {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+}
+
+/**372A47 **/
+
+/* FROM THE BLOG - END */
+
+/* Tablet/Laptop Version 550*/
+@media only screen and (min-width: 550px) {
+  .landing-category-section {
+    display: flex;
+  }
+}
