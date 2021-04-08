@@ -32,11 +32,12 @@ const Landing: React.FC<landingPropsType> = ({ blogs }) => {
       <Hero />
       <Categories />
       <Blogs blogs={blogs} />
-      <Newsletter />
 
       {/* For Desktop */}
       <HeroBlog />
       <CategorySection />
+
+      <Newsletter />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import "./categoryCard.css";
+import { Link } from "gatsby";
 
 interface propsType {
   title: string;
@@ -8,6 +9,7 @@ interface propsType {
   content: string;
   imageSrc: string;
   className: string;
+  routeLink: string;
 }
 
 const CategoryCard: React.FC<propsType> = ({
@@ -17,9 +19,10 @@ const CategoryCard: React.FC<propsType> = ({
   content,
   imageSrc,
   className,
+  routeLink,
 }) => {
   return (
-    <section className={className}>
+    <Link to={routeLink} className={className}>
       <div className="category-card-img">
         <img src={imageSrc} alt="" />
       </div>
@@ -29,7 +32,7 @@ const CategoryCard: React.FC<propsType> = ({
         <p className="category-card-date"> {date} </p>
         <p className="category-card-text">{content}</p>
       </div>
-    </section>
+    </Link>
   );
 };
 

@@ -9,6 +9,7 @@ interface blogType {
   imageSrc: string;
   category: string;
   content: string;
+  slug: string;
 }
 
 interface propTypes {
@@ -27,12 +28,13 @@ const CategoryBlogs: React.FC<propTypes> = ({ name, routeLink, blogs }) => {
       <div className="category-cards">
         {blogs &&
           blogs.map((blog, index) => {
-            const { category, content, date, imageSrc, title } = blog;
+            const { category, content, date, imageSrc, title, slug } = blog;
 
             console.log(index);
 
             return (
               <CategoryCard
+                routeLink={`/blogs/${slug}`}
                 className={
                   index == 1
                     ? "category-blog-card disable"

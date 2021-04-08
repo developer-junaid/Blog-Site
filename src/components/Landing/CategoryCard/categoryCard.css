@@ -1,11 +1,18 @@
 .category-blog-card {
   box-shadow: 1px 1px 4px gray;
+
   width: 49%;
   height: 450px;
   flex-direction: column;
   cursor: pointer;
   text-decoration: none;
   color: black;
+  transition: all 0.3s ease;
+}
+
+.category-blog-card:hover {
+  transform: scale(1.02);
+  box-shadow: -1px -1px 8px gray;
 }
 
 .category-card-content {
@@ -20,6 +27,7 @@
 .category-card-img {
   height: 55%;
 }
+
 .category-card-img img {
   height: 100%;
   width: 100%;
@@ -70,5 +78,11 @@
 
   .category-blog-card {
     width: 100%;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .category-blog-card {
+    height: 100%;
   }
 }
