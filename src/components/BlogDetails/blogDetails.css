@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.blog-side-container {
+  display: none;
+}
+
 .main-img {
   height: 60%;
 }
@@ -16,4 +20,29 @@
   padding: 1rem;
   line-height: 1.3rem;
   letter-spacing: 0.6px;
+}
+
+@media only screen and (min-width: 550px) {
+  .blog-details-wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  .content {
+    padding: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.6px;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .blog-details-container {
+    width: 70%;
+  }
+  .blog-side-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 1rem;
+  }
 }

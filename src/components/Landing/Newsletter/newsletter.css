@@ -60,6 +60,7 @@
 
 @media only screen and (min-width: 550px) {
   .newsletter-section {
-    display: none;
+    width: 90%;
+    margin: 5rem auto;
   }
 }

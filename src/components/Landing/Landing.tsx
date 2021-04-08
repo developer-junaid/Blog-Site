@@ -6,7 +6,6 @@ import Hero from "./Hero/Hero";
 import "./landing.css";
 import HeroBlog from "./HeroBlog/HeroBlog";
 import CategorySection from "./CategorySection/CategorySection";
-import HeroImg from "../../assets/images/hero/hero-blog-image.jpg";
 
 interface blogType {
   node: {
@@ -69,13 +68,13 @@ const Landing: React.FC<landingPropsType> = ({ blogs }) => {
               content output that aligns with this understanding. If you're still
               struggling with engaging your audience ..."
         slug="customer-engagement"
-        sideBarTitle="Latest Posts"
+        sideBarTitle="More Featured"
         date={"20 Aug 2020"}
         sideBlogs={sideBlogs}
       />
       <CategorySection />
 
-      <Newsletter />
+      <Newsletter style={{ width: "60%" }} />
     </div>
   );
 };

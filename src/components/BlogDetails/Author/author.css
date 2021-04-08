@@ -73,5 +73,11 @@
   font-size: 0.9rem;
 }
 
-.social-media {
+@media only screen and (min-width: 550px) {
+  .author-section {
+    width: 90%;
+    margin: 2rem;
+    box-shadow: 1px 1px 4px gray;
+    padding: 2rem;
+  }
 }

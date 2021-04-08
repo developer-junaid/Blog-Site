@@ -18,22 +18,22 @@ export default function Navbar() {
       </Link>
       <ul className={navClicked ? "nav-links nav-active" : "nav-links"}>
         <li>
-          <Link activeStyle={{ color: "#00802b" }} to="/">
+          <Link activeClassName="active-link" to="/">
             Home
           </Link>
         </li>
         <li>
-          <Link activeStyle={{ color: "#00802b" }} to="/categories/gadgets">
+          <Link activeClassName="active-link" to="/categories/gadgets">
             Gadgets
           </Link>
         </li>
         <li>
-          <Link activeStyle={{ color: "#00802b" }} to="/categories/marketing">
+          <Link activeClassName="active-link" to="/categories/marketing">
             Marketing
           </Link>
         </li>
         <li>
-          <Link activeStyle={{ color: "#00802b" }} to="/categories/trends">
+          <Link activeClassName="active-link" to="/categories/trends">
             Trends
           </Link>
         </li>

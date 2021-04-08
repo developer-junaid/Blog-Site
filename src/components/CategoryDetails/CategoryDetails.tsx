@@ -31,6 +31,7 @@ interface CategoryPropsTypes {
 
 const CategoryDetails: React.FC<CategoryPropsTypes> = ({ name, posts }) => {
   console.log(name, posts);
+  let count = 0;
 
   const sideBlogs: sideBlogsType[] = [
     {
@@ -56,6 +57,7 @@ const CategoryDetails: React.FC<CategoryPropsTypes> = ({ name, posts }) => {
       {posts &&
         posts.map((post) => {
           const { id, title, category, slug, createdAt, blogImage } = post;
+          count++;
 
           return (
             <>
@@ -78,7 +80,7 @@ const CategoryDetails: React.FC<CategoryPropsTypes> = ({ name, posts }) => {
               content output that aligns with this understanding. If you're still
               struggling with engaging your audience ..."
                 slug="customer-engagement"
-                sideBar
+                sideBar={count <= 1 ? true : false}
                 sideBarTitle="Latest Posts"
                 date={"20 Aug 2020"}
                 sideBlogs={sideBlogs}

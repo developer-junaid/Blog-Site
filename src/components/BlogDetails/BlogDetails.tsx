@@ -6,6 +6,7 @@ import Heading from "../Heading/Heading";
 import Author from "./Author/Author";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import SideCard from "./../Landing/HeroBlog/SideCard.tsx/SideCard";
 
 interface blogDetailsPropsType {
   title: string;
@@ -54,17 +55,53 @@ const BlogDetails: React.FC<blogDetailsPropsType> = ({
 
   return (
     <Layout>
-      <div className="blog-details-container">
+      <div className="blog-main-wrapper">
         <div className="main-img">
           <img src={imageSrc} alt="" />
         </div>
-        <Heading title={title} style={{ width: "60vw", margin: "3rem auto" }} />
-        <div className="content">
-          {documentToReactComponents(contentJSON, RICHTEXT_OPTIONS)}
+        <Heading
+          title={title}
+          style={{ width: "60vw", fontSize: "1.4rem", margin: "3rem auto" }}
+        />
+
+        <div className="blog-details-wrapper">
+          <div className="blog-details-container">
+            <div className="content">
+              {documentToReactComponents(contentJSON, RICHTEXT_OPTIONS)}
+            </div>
+            <Author author={author} likes={likes} />
+            <Newsletter style={{ marginTop: "1rem", padding: "1rem" }} />
+          </div>
+
+          <div className="blog-side-container">
+            <h3>Latest Posts</h3>
+            <SideCard
+              title="How I went from programming with a Nokia to Samsung!"
+              category="gadgets"
+              date="23 Aug 2020"
+              slug="nokia-to-samsung"
+            />
+            <SideCard
+              title="How I went from programming with a Nokia to Samsung!"
+              category="gadgets"
+              date="23 Aug 2020"
+              slug="nokia-to-samsung"
+            />
+            <SideCard
+              title="How I went from programming with a Nokia to Samsung!"
+              category="gadgets"
+              date="23 Aug 2020"
+              slug="nokia-to-samsung"
+            />
+            <SideCard
+              title="How I went from programming with a Nokia to Samsung!"
+              category="gadgets"
+              date="23 Aug 2020"
+              slug="nokia-to-samsung"
+            />
+          </div>
         </div>
       </div>
-      <Author author={author} likes={likes} />
-      <Newsletter style={{ marginTop: "1rem", padding: "1rem" }} />
     </Layout>
   );
 };

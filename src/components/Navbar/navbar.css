@@ -65,6 +65,10 @@ body {
   outline: none;
 }
 
+.active-link {
+  color: #ffffff;
+}
+
 .nav-active {
   opacity: 1;
   transform: translateX(0);
@@ -103,6 +107,10 @@ body {
     color: black;
     font-weight: 400;
     transition: all 0.2s ease;
+  }
+
+  .active-link {
+    color: #00802b !important;
   }
 
   .nav-links a:hover {
