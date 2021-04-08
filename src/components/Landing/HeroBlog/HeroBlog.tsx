@@ -4,62 +4,88 @@ import { Link } from "gatsby";
 import Newsletter from "../Newsletter/Newsletter";
 import SideCard from "./SideCard.tsx/SideCard";
 
-const HeroBlog = () => {
+interface sideBlogsType {
+  category: string;
+  title: string;
+  date: string;
+  slug: string;
+}
+
+interface propTypes {
+  title: string;
+  date: string;
+  category: string;
+  content: string;
+  slug: string;
+  imageSrc?: string;
+  id?: string;
+  sideBarTitle?: string;
+  sideBlogs?: sideBlogsType[];
+  sideBar: boolean;
+}
+
+const HeroBlog: React.FC<propTypes> = ({
+  title,
+  date,
+  category,
+  imageSrc,
+  content,
+  slug,
+  sideBarTitle,
+  sideBlogs,
+  sideBar,
+  id,
+}) => {
   return (
     // HeroBlog Section
     <div className="hero-wrapper">
       <section className="hero-blog-card">
-        <div className="hero-card-img">
-          {/* <img src={HeroImg} alt="" /> */}
+        <div className="hero-card-img" id={id}>
+          {imageSrc ? <img src={imageSrc} alt="" /> : null}
         </div>
         <div className="hero-card-content">
-          <p className="hero-card-tag">Gadgets</p>
-          <p className="hero-card-title">
-            7 Proven Tactics to Boost Your Customer Engagement on Social Media
-          </p>
-          <p className="hero-card-date"> May 15 2018 </p>
-          <p className="hero-card-text">
-            Engaging customers on social media is not an easy task. It requires
-            the right strategy, a deep understanding of your audience, and
-            content output that aligns with this understanding. If you're still
-            struggling with engaging your audience ...
-          </p>
-          <Link to="/">Read More</Link>
+          <p className="hero-card-tag">{category}</p>
+          <p className="hero-card-title">{title}</p>
+          <p className="hero-card-date"> {date} </p>
+          <p className="hero-card-text">{content}</p>
+          <Link to={`/blogs/${slug}`}>Read More</Link>
         </div>
       </section>
-      <div className="side-section">
-        <h4>More Featured</h4>
-        <SideCard
-          title={"How I went from programming with a Nokia to Samsung!"}
-          date="15 May 2020"
-          category="gadgets"
-          routeLink="/blogs/Slug"
-        />
-        <SideCard
-          title={"How I went from programming with a Nokia to Samsung!"}
-          date="15 May 2020"
-          category="trends"
-          routeLink="/blogs/Slug"
-        />
-        <SideCard
-          title={"How I went from programming with a Nokia to Samsung!"}
-          date="15 May 2020"
-          category="gadgets"
-          routeLink="/blogs/Slug"
-        />
-        <SideCard
-          title={"How I went from programming with a Nokia to Samsung!"}
-          date="15 May 2020"
-          category="gadgets"
-          routeLink="/blogs/Slug"
-        />
-        <SideCard
-          title={"How I went from programming with a Nokia to Samsung!"}
-          date="25 May 2020"
-          category="marketing"
-          routeLink="/blogs/Slug"
-        />
-      </div>
+      {sideBar && (
+        <div className="side-section">
+          <h4>{sideBarTitle}</h4>
+          <SideCard
+            title={"How I went from programming with a Nokia to Samsung!"}
+            date="15 May 2020"
+            category="gadgets"
+            slug="slug"
+          />
+          <SideCard
+            title={"How I went from programming with a Nokia to Samsung!"}
+            date="15 May 2020"
+            category="trends"
+            slug="slug"
+          />
+          <SideCard
+            title={"How I went from programming with a Nokia to Samsung!"}
+            date="15 May 2020"
+            category="gadgets"
+            slug="slug"
+          />
+          <SideCard
+            title={"How I went from programming with a Nokia to Samsung!"}
+            date="15 May 2020"
+            category="gadgets"
+            slug="slug"
+          />
+          <SideCard
+            title={"How I went from programming with a Nokia to Samsung!"}
+            date="25 May 2020"
+            category="marketing"
+            slug="slug"
+          />
+        </div>
+      )}
     </div>
   );
 };

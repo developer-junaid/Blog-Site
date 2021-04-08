@@ -59,3 +59,9 @@
 }
 
 /* FROM THE BLOG - END */
+
+@media only screen and (min-width: 550px) {
+  .blog-card {
+    display: none;
+  }
+}

@@ -3,8 +3,9 @@ import CategoryDetails from "../components/CategoryDetails/CategoryDetails";
 
 interface blogDetailsType {
   title: string;
+  id: string;
   createdAt: string;
-  imageSrc: string;
+  blogImage: { fluid: { src: string } };
   content: string;
   likes: number;
   author: string;
@@ -18,6 +19,7 @@ export default function CategoryTemplate({ pageContext }) {
   const postDetails = pageContext.postDetails;
   const { id, name } = category.node;
   const postsToShow: blogDetailsType[] = [];
+  console.log(postDetails);
 
   postDetails.map((post) => {
     if (post.node.category === name) {

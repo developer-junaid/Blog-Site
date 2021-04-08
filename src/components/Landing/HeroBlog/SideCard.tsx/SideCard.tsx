@@ -6,17 +6,12 @@ interface propTypes {
   category: string;
   title: string;
   date: string;
-  routeLink: string;
+  slug: string;
 }
 
-const SideCard: React.FC<propTypes> = ({
-  category,
-  title,
-  date,
-  routeLink,
-}) => {
+const SideCard: React.FC<propTypes> = ({ category, title, date, slug }) => {
   return (
-    <Link to={routeLink} className="side-card">
+    <Link to={`/blogs/${slug}`} className="side-card">
       <p className="side-card-tag">{category}</p>
       <p className="side-card-title">{title}</p>
       <p className="side-card-date"> {date} </p>
