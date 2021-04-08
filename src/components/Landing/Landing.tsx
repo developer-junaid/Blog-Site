@@ -33,20 +33,24 @@ interface landingPropsType {
 }
 
 const Landing: React.FC<landingPropsType> = ({ blogs }) => {
-  const sideBlogs: sideBlogsType[] = [
-    {
-      title: "How I went from programming with a Nokia to Samsung!",
-      date: "15 May 2020",
-      category: "gadgets",
-      slug: "slug",
-    },
-    {
-      title: "How I went from programming with a Nokia to Samsung!",
-      date: "15 May 2020",
-      category: "gadgets",
-      slug: "slug",
-    },
-  ];
+  // Filter Side Bar Blogs for Landing
+  const sideBlogs: sideBlogsType[] = [];
+
+  blogs.slice(0, 6).map((blog) => {
+    let sideBlog: sideBlogsType = {
+      title: blog.node.title,
+      date: blog.node.createdAt,
+      category: blog.node.category,
+      slug: blog.node.slug,
+    };
+
+    sideBlogs.push(sideBlog);
+  });
+
+  // Filter Data for Hero Blog on Landing
+  let heroBlogData = blogs.filter(
+    (blog) => blog.node.slug === "customer-engagement"
+  );
 
   return (
     <div className="homepage-container">
@@ -57,22 +61,20 @@ const Landing: React.FC<landingPropsType> = ({ blogs }) => {
 
       {/* For Desktop */}
       <HeroBlog
-        title={
-          "7 Proven Tactics to Boost Your Customer Engagement on Social Media"
-        }
+        title={heroBlogData[0].node.title}
         sideBar
         id={"hero-img"}
-        category={"Gadgets"}
+        category={heroBlogData[0].node.category}
         content="Engaging customers on social media is not an easy task. It requires
               the right strategy, a deep understanding of your audience, and
               content output that aligns with this understanding. If you're still
               struggling with engaging your audience ..."
-        slug="customer-engagement"
+        slug={heroBlogData[0].node.slug}
         sideBarTitle="More Featured"
-        date={"20 Aug 2020"}
+        date={heroBlogData[0].node.createdAt}
         sideBlogs={sideBlogs}
       />
-      <CategorySection />
+      <CategorySection blogs={blogs} />
 
       <Newsletter style={{ width: "60%" }} />
     </div>

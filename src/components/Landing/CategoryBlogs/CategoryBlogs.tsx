@@ -4,36 +4,56 @@ import { Link } from "gatsby";
 import CategoryCard from "../CategoryCard/CategoryCard";
 
 interface blogType {
-  title: string;
-  date: string;
-  imageSrc: string;
-  category: string;
-  content: string;
-  slug: string;
+  node: {
+    id: string;
+    category: string;
+    slug: string;
+    likes: number;
+    title: string;
+    createdAt: string;
+    author: string;
+    blogImage: { fluid: { src: string } };
+    content: {};
+  };
 }
 
 interface propTypes {
   name: string;
-  routeLink: string;
+  categoryName: string;
   blogs: blogType[];
 }
 
-const CategoryBlogs: React.FC<propTypes> = ({ name, routeLink, blogs }) => {
+const CategoryBlogs: React.FC<propTypes> = ({ name, categoryName, blogs }) => {
+  // Filter 2 Blogs for Category
+  let categoryBlogs = [];
+
+  blogs.map((blog) => {
+    if (blog.node.category === categoryName) {
+      categoryBlogs.push(blog);
+    }
+  });
+
   return (
     <div className="landing-category-blogs">
       <div className="labels">
         <h4>{name}</h4>
-        <Link to={routeLink}>View All</Link>
+        <Link to={`categories/${categoryName}`}>View All</Link>
       </div>
       <div className="category-cards">
-        {blogs &&
-          blogs.map((blog, index) => {
-            const { category, content, date, imageSrc, title, slug } = blog;
-
-            console.log(index);
+        {categoryBlogs &&
+          categoryBlogs.slice(0, 2).map((categoryBlog, index) => {
+            console.log(categoryBlog);
+            const {
+              category,
+              createdAt,
+              blogImage,
+              title,
+              slug,
+            } = categoryBlog.node;
 
             return (
               <CategoryCard
+                key={slug}
                 routeLink={`/blogs/${slug}`}
                 className={
                   index == 1
@@ -41,15 +61,17 @@ const CategoryBlogs: React.FC<propTypes> = ({ name, routeLink, blogs }) => {
                     : "category-blog-card"
                 }
                 category={category}
-                content={content}
-                date={date}
-                imageSrc={imageSrc}
+                content={
+                  "Engaging customers on social media is not an easy task. It requires the right strategy, a deep understanding ..."
+                }
+                date={createdAt}
+                imageSrc={blogImage.fluid.src}
                 title={title}
               />
             );
           })}
       </div>
-      <Link to={routeLink} className="load-btn">
+      <Link to={`categories/${categoryName}`} className="load-btn">
         Load More
       </Link>
     </div>

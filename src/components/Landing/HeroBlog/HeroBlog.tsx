@@ -54,36 +54,20 @@ const HeroBlog: React.FC<propTypes> = ({
       {sideBar && (
         <div className="side-section">
           <h4>{sideBarTitle}</h4>
-          <SideCard
-            title={"How I went from programming with a Nokia to Samsung!"}
-            date="15 May 2020"
-            category="gadgets"
-            slug="slug"
-          />
-          <SideCard
-            title={"How I went from programming with a Nokia to Samsung!"}
-            date="15 May 2020"
-            category="trends"
-            slug="slug"
-          />
-          <SideCard
-            title={"How I went from programming with a Nokia to Samsung!"}
-            date="15 May 2020"
-            category="gadgets"
-            slug="slug"
-          />
-          <SideCard
-            title={"How I went from programming with a Nokia to Samsung!"}
-            date="15 May 2020"
-            category="gadgets"
-            slug="slug"
-          />
-          <SideCard
-            title={"How I went from programming with a Nokia to Samsung!"}
-            date="25 May 2020"
-            category="marketing"
-            slug="slug"
-          />
+          {sideBlogs &&
+            sideBlogs.map((sideBlog) => {
+              const { category, date, slug, title } = sideBlog;
+
+              return (
+                <SideCard
+                  key={slug}
+                  category={category}
+                  date={date}
+                  slug={slug}
+                  title={title}
+                />
+              );
+            })}
         </div>
       )}
     </div>
