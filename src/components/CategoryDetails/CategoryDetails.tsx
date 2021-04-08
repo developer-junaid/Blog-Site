@@ -4,6 +4,7 @@ import Layout from "../Layout/Layout";
 import Heading from "../Heading/Heading";
 import Blog from "./../Landing/Blog/Blog";
 import HeroBlog from "./../Landing/HeroBlog/HeroBlog";
+import { Link } from "gatsby";
 
 interface blogDetailsType {
   title: string;
@@ -30,23 +31,20 @@ interface CategoryPropsTypes {
 }
 
 const CategoryDetails: React.FC<CategoryPropsTypes> = ({ name, posts }) => {
-  console.log(name, posts);
   let count = 0;
 
-  const sideBlogs: sideBlogsType[] = [
-    {
-      title: "How I went from programming with a Nokia to Samsung!",
-      date: "15 May 2020",
-      category: "gadgets",
-      slug: "slug",
-    },
-    {
-      title: "How I went from programming with a Nokia to Samsung!",
-      date: "15 May 2020",
-      category: "gadgets",
-      slug: "slug",
-    },
-  ];
+  let sideBlogs = [];
+
+  posts.slice(0, 3).map((post) => {
+    let sideBlog = {
+      title: post.title,
+      date: post.createdAt,
+      category: post.category,
+      slug: post.slug,
+    };
+
+    sideBlogs.push(sideBlog);
+  });
 
   return (
     <Layout>
@@ -60,35 +58,31 @@ const CategoryDetails: React.FC<CategoryPropsTypes> = ({ name, posts }) => {
           count++;
 
           return (
-            <>
+            <div key={id}>
               <Blog
-                key={id}
                 title={title}
                 category={category}
                 slug={slug}
                 createdAt={createdAt}
                 imageSrc={blogImage.fluid.src}
               />
-              <HeroBlog
-                key={id}
-                title={
-                  "7 Proven Tactics to Boost Your Customer Engagement on Social Media"
-                }
-                category={"Gadgets"}
-                content="Engaging customers on social media is not an easy task. It requires
+              <Link className="hero-link" to={`/blogs/${slug}`}>
+                <HeroBlog
+                  title={title}
+                  category={category}
+                  content="Engaging customers on social media is not an easy task. It requires
               the right strategy, a deep understanding of your audience, and
               content output that aligns with this understanding. If you're still
               struggling with engaging your audience ..."
-                slug="customer-engagement"
-                sideBar={count <= 1 ? true : false}
-                sideBarTitle="Latest Posts"
-                date={"20 Aug 2020"}
-                sideBlogs={sideBlogs}
-                imageSrc={
-                  "//images.ctfassets.net/8u45elrcb9jl/1J0iKQuMrGbj4McTizR2nO/e5d96b00e844226665e705a48738ce11/camera.jpg?w=800&q=50"
-                }
-              />
-            </>
+                  slug={slug}
+                  sideBar={count <= 1 ? true : false}
+                  sideBarTitle="Latest Posts"
+                  date={createdAt}
+                  sideBlogs={sideBlogs}
+                  imageSrc={blogImage.fluid.src}
+                />
+              </Link>
+            </div>
           );
         })}
     </Layout>

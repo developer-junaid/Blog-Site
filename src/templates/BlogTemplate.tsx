@@ -4,8 +4,9 @@ import BlogDetails from "../components/BlogDetails/BlogDetails";
 // Blog Template
 export default function BlogTemplate({ pageContext }) {
   // Data recieved
-  const post = pageContext.postDetails.node;
-  console.log("blog", post);
+  const postDetails = pageContext.postDetails.node;
+  const allPosts = pageContext.allPosts;
+
   const {
     category,
     slug,
@@ -15,7 +16,22 @@ export default function BlogTemplate({ pageContext }) {
     createdAt,
     blogImage,
     content,
-  } = post;
+  } = postDetails;
+
+  let sideBlogs = [];
+
+  allPosts.map((post) => {
+    if (post.node.category === category) {
+      let sideBlog = {
+        category: post.node.category,
+        title: post.node.title,
+        date: post.node.createdAt,
+        slug: post.node.slug,
+      };
+
+      sideBlogs.push(sideBlog);
+    }
+  });
 
   return (
     <BlogDetails
@@ -27,6 +43,7 @@ export default function BlogTemplate({ pageContext }) {
       likes={likes}
       author={author}
       createdAt={createdAt}
+      sideBlogs={sideBlogs}
     />
   );
 }

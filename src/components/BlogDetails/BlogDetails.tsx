@@ -8,6 +8,13 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import SideCard from "./../Landing/HeroBlog/SideCard.tsx/SideCard";
 
+interface sideBlogsType {
+  category: string;
+  title: string;
+  date: string;
+  slug: string;
+}
+
 interface blogDetailsPropsType {
   title: string;
   createdAt: string;
@@ -17,6 +24,7 @@ interface blogDetailsPropsType {
   author: string;
   slug: string;
   category: string;
+  sideBlogs: sideBlogsType[];
 }
 
 const BlogDetails: React.FC<blogDetailsPropsType> = ({
@@ -28,9 +36,9 @@ const BlogDetails: React.FC<blogDetailsPropsType> = ({
   author,
   slug,
   category,
+  sideBlogs,
 }) => {
   const contentJSON = JSON.parse(content);
-  console.log(contentJSON);
 
   // Options
   const RICHTEXT_OPTIONS = {
@@ -75,30 +83,18 @@ const BlogDetails: React.FC<blogDetailsPropsType> = ({
 
           <div className="blog-side-container">
             <h3>Latest Posts</h3>
-            <SideCard
-              title="How I went from programming with a Nokia to Samsung!"
-              category="gadgets"
-              date="23 Aug 2020"
-              slug="nokia-to-samsung"
-            />
-            <SideCard
-              title="How I went from programming with a Nokia to Samsung!"
-              category="gadgets"
-              date="23 Aug 2020"
-              slug="nokia-to-samsung"
-            />
-            <SideCard
-              title="How I went from programming with a Nokia to Samsung!"
-              category="gadgets"
-              date="23 Aug 2020"
-              slug="nokia-to-samsung"
-            />
-            <SideCard
-              title="How I went from programming with a Nokia to Samsung!"
-              category="gadgets"
-              date="23 Aug 2020"
-              slug="nokia-to-samsung"
-            />
+
+            {sideBlogs &&
+              sideBlogs.slice(0, 3).map((sideBlog) => {
+                return (
+                  <SideCard
+                    title={sideBlog.title}
+                    category={sideBlog.category}
+                    date={sideBlog.date}
+                    slug={sideBlog.slug}
+                  />
+                );
+              })}
           </div>
         </div>
       </div>

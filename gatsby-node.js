@@ -51,6 +51,7 @@ exports.createPages = async ({ actions, graphql }) => {
       component: path.resolve("./src/templates/BlogTemplate.tsx"),
       context: {
         postDetails: blogPost,
+        allPosts: blogPosts,
       },
     });
   });

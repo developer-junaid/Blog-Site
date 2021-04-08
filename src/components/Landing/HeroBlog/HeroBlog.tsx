@@ -55,12 +55,12 @@ const HeroBlog: React.FC<propTypes> = ({
         <div className="side-section">
           <h4>{sideBarTitle}</h4>
           {sideBlogs &&
-            sideBlogs.map((sideBlog) => {
+            sideBlogs.map((sideBlog, index) => {
               const { category, date, slug, title } = sideBlog;
 
               return (
                 <SideCard
-                  key={slug}
+                  key={index}
                   category={category}
                   date={date}
                   slug={slug}
