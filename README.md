@@ -1,48 +1,40 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# :closed_book: Tech Berg (Blog-Site)
 
-## 🚀 Quick start
+### _Tech Berg Blog Website, built using GatsbyJs, Typescript, Contentful and Netlify !!_
 
-1.  **Create a Gatsby site.**
+### Demo Video :link: 
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+### Link :link: https://techberg-blog.netlify.app/
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+## Interface
 
-2.  **Start developing.**
+<img src='./projectImages/homepageBlog.png/' />
+<img src='./projectImages/categoryBlog.png/' />
 
-    Navigate into your new site’s directory and start it up.
+## Mobile Interface
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+<img src='./projectImages/mobileBlog.png/' />
 
-3.  **Open the code and start customizing!**
+## Run Locally
 
-    Your site is now running at http://localhost:8000!
+- Run this command `git clone https://github.com/developer-junaid/Blog-Site.git`
+- You are now in the dev environment and you can play around
+- * !! PLEASE, DON'T USE MY .env FILE !! *
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+## Features
 
-4.  **Learn more**
+- Blogs 
+- Categories
+- Accessibility Optimized
+- Mobile Responsive
+- Open Source (Tweak it and use it) :)
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## Tech Stack
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- HTML5
+- CSS3
+- ES+6
+- Typescript
+- GatsbyJs
+- Contentful
+- Netlify
