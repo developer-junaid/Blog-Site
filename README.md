@@ -2,7 +2,7 @@
 
 ### _Tech Berg Blog Website, built using GatsbyJs, Typescript, Contentful and Netlify !!_
 
-### Demo Video :link: 
+### Demo Video :link: https://youtu.be/3luYFpHBp4s
 
 ### Link :link: https://techberg-blog.netlify.app/
 
