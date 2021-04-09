@@ -12,8 +12,8 @@ exports.createPages = async ({ actions, graphql }) => {
           node {
             id
             category
-            slug
             title
+            slug
             createdAt(fromNow: true)
             author
             likes

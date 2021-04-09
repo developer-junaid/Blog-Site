@@ -8,7 +8,10 @@
 }
 
 .main-img {
-  height: 60%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  margin: 1rem auto;
 }
 
 .main-img img {
@@ -36,6 +39,18 @@
 }
 
 @media only screen and (min-width: 950px) {
+  .main-img {
+    height: 50%;
+    width: 50%;
+    position: relative;
+    margin: 1rem auto;
+  }
+
+  .main-img img {
+    width: 100%;
+    height: 100%;
+  }
+
   .blog-details-container {
     width: 70%;
   }
