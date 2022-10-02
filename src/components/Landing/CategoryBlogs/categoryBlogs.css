@@ -21,7 +21,7 @@
 
 .labels a {
   text-decoration: none;
-  color: #5b5858b0;
+  color: rgb(0 0 0 / 78%);
   font-size: 0.75rem;
   font-weight: bold;
   transition: all 0.3s ease;

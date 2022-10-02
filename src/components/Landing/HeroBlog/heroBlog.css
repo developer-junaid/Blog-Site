@@ -81,6 +81,11 @@
   font-size: 0.9rem;
   font-weight: 450;
 }
+.hero-card-content a:hover{
+  color: #5b5858d8;
+}
+
+
 .side-section {
   display: none;
   text-align: left;
@@ -98,6 +103,7 @@
   max-width: 350px;
   width: 100%;
 }
+
 
 /* FROM THE BLOG - END */
 

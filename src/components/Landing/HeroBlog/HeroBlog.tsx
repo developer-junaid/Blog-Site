@@ -48,7 +48,8 @@ const HeroBlog: React.FC<propTypes> = ({
           <p className="hero-card-title">{title}</p>
           <p className="hero-card-date"> {date} </p>
           <p className="hero-card-text">{content}</p>
-          <Link to={`/blogs/${slug}`}>Read More</Link>
+         <div class="fade-in-text"><Link to={`/blogs/${slug}`}>Read More</Link>
+         </div>
         </div>
       </section>
       {sideBar && (
